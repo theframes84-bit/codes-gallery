@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>codes.gallery — Archive</title>
+  <meta name="description" content="Archive works from codes.gallery." />
+  <link rel="canonical" href="https://codes.gallery/archive1.html" />
+  <meta name="theme-color" content="#000000" />
+
+  <meta property="og:site_name" content="codes.gallery" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://codes.gallery/archive1.html" />
+  <meta property="og:title" content="codes.gallery — Archive" />
+  <meta property="og:description" content="Archive works from codes.gallery." />
+  <meta property="og:image" content="https://codes.gallery/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="codes.gallery archive social preview card with geometric system artwork and the phrase Original ideas, rendered in code." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://codes.gallery/archive1.html" />
+  <meta name="twitter:title" content="codes.gallery — Archive" />
+  <meta name="twitter:description" content="Archive works from codes.gallery." />
+  <meta name="twitter:image" content="https://codes.gallery/social-card.png" />
+  <meta name="twitter:image:alt" content="codes.gallery archive social preview card with geometric system artwork and the phrase Original ideas, rendered in code." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/favicon-32.png" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW4MBB1BF9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YW4MBB1BF9');
+  </script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #f5f7fb;
+      --muted: #7f8791;
+      --soft: #d9dee5;
+      --line: rgba(255,255,255,0.12);
+      --line-soft: rgba(255,255,255,0.08);
+      --cyan: #4FF6FF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Avenir Next','Nunito','Quicksand','Segoe UI',Arial,sans-serif;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 100% 4px;
+      opacity: 0.06;
+      mix-blend-mode: screen;
+    }
+    .wrap {
+      width: min(820px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 28px 0 72px;
+      position: relative;
+      z-index: 1;
+    }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      background: rgba(8,8,8,0.92);
+      transition: color .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease, transform .18s ease;
+    }
+    .back:hover,
+    .back:focus-visible {
+      color: #f8fbff;
+      border-color: rgba(255,255,255,0.48);
+      box-shadow: 0 0 18px rgba(255,255,255,0.32), 0 0 32px rgba(255,255,255,0.10);
+      background: rgba(18,18,18,0.98);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .panel {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 18px;
+      margin-top: 18px;
+    }
+    .label {
+      margin: 0 0 8px 0;
+      color: var(--cyan);
+      font-size: 11px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      font-family:'JetBrains Mono','SFMono-Regular','Cascadia Code','Fira Code','Consolas',monospace;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.02;
+      font-weight: 600;
+    }
+    .lead {
+      margin: 14px 0 0 0;
+      max-width: 680px;
+      color: var(--soft);
+      font-size: clamp(14px, 2vw, 18px);
+      line-height: 1.75;
+    }
+    .archive-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .archive-card {
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow .18s ease, border-color .18s ease, background .18s ease, transform .18s ease;
+    }
+    .archive-card:hover,
+    .archive-card:focus-visible {
+      border-color: rgba(255,255,255,0.48);
+      box-shadow: 0 0 18px rgba(255,255,255,0.32), 0 0 32px rgba(255,255,255,0.10);
+      background: rgba(18,18,18,0.98);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .archive-thumb {
+      width: 108px;
+      height: 108px;
+      object-fit: contain;
+      background: #000;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+    .archive-title {
+      margin: 0;
+      font-size: clamp(16px, 2vw, 22px);
+      line-height: 1.1;
+      font-weight: 600;
+      color: #f5f7fb;
+    }
+    .meta {
+      margin: 8px 0 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-family:'JetBrains Mono','SFMono-Regular','Cascadia Code','Fira Code','Consolas',monospace;
+    }
+    .desc {
+      margin: 8px 0 0 0;
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .archive-link {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-family:'JetBrains Mono','SFMono-Regular','Cascadia Code','Fira Code','Consolas',monospace;
+    }
+    .footer-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .discussion-wrap {
+      margin-top: 28px;
+    }
+    .footer-note a {
+      color: var(--soft);
+      text-decoration: none;
+    }
+    .site-footer {
+      position: sticky;
+      bottom: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 28px;
+      padding: 12px 0 8px;
+      background: linear-gradient(to top, rgba(0,0,0,0.96), rgba(0,0,0,0.82), rgba(0,0,0,0));
+    }
+    .site-footer-left {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .site-footer-left a {
+      color: var(--soft);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
+    .site-footer-left .license-icons {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+    .site-footer-left .license-icons img {
+      width: 1.2em;
+      height: 1.2em;
+      display: block;
+    }
+    .footer-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      color: var(--soft);
+      text-decoration: none;
+      font-size: 14px;
+      flex: 0 0 auto;
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(820px, calc(100% - 24px)); }
+      .archive-card { grid-template-columns: 1fr; }
+      .archive-thumb { width: 96px; height: 96px; }
+      .desc { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="index.html" aria-label="Back to codes.gallery"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <section class="panel">
+      <p class="label">Archive</p>
+      <h1>From signal to structure.</h1>
+      <p class="lead">Tracing the evolution of coded works through timeline markers, updates, upgrades, and structural change.</p>
+    </section>
+
+    <section class="panel">
+      <div class="archive-list">
+        <a class="archive-card" href="index.html">
+          <img class="archive-thumb" src="assets/tesseract_original_motion_wireframe.gif" alt="Harness Loop thumbnail" />
+          <div>
+            <h2 class="archive-title">Harness Loop</h2>
+            <p class="meta">March 20, 2026 · CST</p>
+            <p class="desc"><strong>Medium:</strong> ChatGPT 5.4 Images · Codex</p>
+            <p class="desc"><strong>Code:</strong> HTML / CSS / JavaScript</p>
+            <p class="desc"><strong>Object:</strong> An early signal object for <em>OS:AI Framework</em>, relating hypercube motion, emergence, and structure-in-formation to the project’s broader system language.</p>
+            <div class="archive-link">View landing page</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel discussion-wrap">
+      <p class="label">Discussion</p>
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https://codes.gallery/archive1.html';
+          this.page.identifier = 'codes-gallery-archive1';
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://codes-gallery.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer-left"><a href="http://codes.gallery" target="_blank" rel="noopener noreferrer">codes.gallery</a> © 2026 by <a href="https://vgallery.space" target="_blank" rel="noopener noreferrer">vGallerySpace</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a><span class="license-icons"><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA"></span></div>
+      <a class="footer-contact" href="mailto:info@codes.gallery" aria-label="Email codes.gallery"><i class="fa-regular fa-envelope"></i></a>
+    </footer>
+  </div>
+</body>
+</html>

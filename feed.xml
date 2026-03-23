@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>codes.gallery</title>
+    <link>https://codes.gallery/</link>
+    <description>Updates from codes.gallery — coded exhibition work, archive releases, and structure-in-formation.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Mar 2026 14:03:00 CDT</lastBuildDate>
+    <atom:link href="https://codes.gallery/feed.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom" />
+
+    <item>
+      <title>codes.gallery launch surface</title>
+      <link>https://codes.gallery/</link>
+      <guid>https://codes.gallery/#launch-surface</guid>
+      <pubDate>Sun, 22 Mar 2026 13:00:00 CDT</pubDate>
+      <description><![CDATA[The main codes.gallery page presents the current coded exhibition direction: original ideas, rendered in code.]]></description>
+    </item>
+
+    <item>
+      <title>Harness Loop added to archive</title>
+      <link>https://codes.gallery/archive1.html</link>
+      <guid>https://codes.gallery/archive1.html#harness-loop</guid>
+      <pubDate>Sun, 22 Mar 2026 13:30:00 CDT</pubDate>
+      <description><![CDATA[Archive entry for Harness Loop, an early signal object within the OS:AI Framework, is available on the archive page.]]></description>
+    </item>
+  </channel>
+</rss>
