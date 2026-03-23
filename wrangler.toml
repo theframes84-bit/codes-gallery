@@ -1,0 +1,5 @@
+name = "codes-gallery"
+compatibility_date = "2026-03-23"
+
+[assets]
+directory = "."
