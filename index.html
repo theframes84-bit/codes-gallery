@@ -600,6 +600,30 @@
       font-size: 11px;
       line-height: 1.7;
       font-family:'JetBrains Mono','SFMono-Regular','Cascadia Code','Fira Code','Consolas',monospace;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .micro-credit-icon {
+      color: #d9dee5;
+      text-decoration: none;
+      border-bottom: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      transition: color .18s ease, text-shadow .18s ease, transform .18s ease;
+    }
+
+    .micro-credit-icon:hover,
+    .micro-credit-icon:focus-visible {
+      color: #f8fbff;
+      text-shadow: 0 0 12px rgba(255,255,255,0.34), 0 0 24px rgba(255,255,255,0.14);
+      transform: translateY(-1px);
+      outline: none;
     }
 
     .desc a,
@@ -700,7 +724,24 @@
       .hero { padding: 18px 18px 10px; }
       .desc { font-size: 14px; }
       .newsletter-form input { min-width: min(100%, 280px); width: 100%; }
-      .hero-newsletter input { min-width: min(100%, 280px); width: 100%; }
+      .hero-newsletter {
+        flex-wrap: nowrap;
+        gap: 6px;
+        width: min(100%, 360px);
+      }
+      .hero-newsletter input {
+        min-width: 0;
+        width: auto;
+        flex: 1 1 auto;
+        height: 40px;
+        padding: 0 12px;
+      }
+      .hero-newsletter .share-trigger,
+      .hero-newsletter button[type="submit"] {
+        width: 40px;
+        height: 40px;
+        flex: 0 0 40px;
+      }
       .archive-card { grid-template-columns: 1fr; }
       .archive-thumb { width: 96px; height: 96px; }
     }
@@ -761,14 +802,26 @@
       </div>
 
       <div class="socials">
+        <a href="#" aria-label="Frames on Linktree"><i class="fa-brands fa-linktree"></i></a>
         <a href="https://x.com/FramesShift5" target="_blank" rel="noopener noreferrer" aria-label="Frames on X"><i class="fa-brands fa-x-twitter"></i></a>
         <a href="https://t.me/FramesStance_bot" target="_blank" rel="noopener noreferrer" aria-label="Frames on Telegram"><i class="fa-brands fa-telegram"></i></a>
         <a href="https://discord.com/invite/5MbmCZKNTB" target="_blank" rel="noopener noreferrer" aria-label="Frames on Discord"><i class="fa-brands fa-discord"></i></a>
         <a href="https://github.com/theframes84-bit" target="_blank" rel="noopener noreferrer" aria-label="Frames on GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.youtube.com/@thecodesgallery" target="_blank" rel="noopener noreferrer" aria-label="Frames on YouTube"><i class="fa-brands fa-youtube"></i></a>
       </div>
 
       <div style="height: 18px;"></div>
       <p class="label">Archive</p>
+      <a class="archive-card" href="https://opensea.io/collection/harness-loop-by-xframes" target="_blank" rel="noopener noreferrer">
+        <img class="archive-thumb" src="assets/backaleyway.png" alt="Harness Loop NFT collection thumbnail" />
+        <div>
+          <h3 class="archive-title">Harness Loop NFT</h3>
+          <p class="sub">OpenSea Collection · April 05, 2026 · CST</p>
+          <p class="archive-desc"><strong>Medium:</strong> NFT Collection · OpenSea · Ethereum</p>
+          <p class="archive-desc"><strong>Object:</strong> A minted extension of <em>Harness Loop</em>, connecting the motion study to the codesgallery OpenSea profile, collection, and object pages.</p>
+          <div class="archive-link">Explore collection</div>
+        </div>
+      </a>
       <a class="archive-card" href="https://catalog.codes.gallery" target="_blank" rel="noopener noreferrer">
         <img class="archive-thumb" src="assets/catalog-release-thumb.png" alt="Catalog Release thumbnail" />
         <div>
@@ -795,7 +848,7 @@
     </div>
 
     <div class="panel">
-      <p class="micro-credit">Hypercube direction inspired by <a href="https://en.wikipedia.org/wiki/Tesseract" target="_blank" rel="noopener noreferrer">tesseract studies</a>.</p>
+      <p class="micro-credit"><a class="micro-credit-icon" href="https://en.wikipedia.org/wiki/Tesseract" target="_blank" rel="noopener noreferrer" aria-label="Read about tesseracts on Wikipedia"><i class="fa-brands fa-wikipedia-w"></i></a>Hypercube direction inspired by tesseract studies</p>
     </div>
 
     <footer class="site-footer">

@@ -191,6 +191,27 @@
       color: var(--muted);
       font-size: 12px;
       line-height: 1.8;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .footer-note-icon {
+      color: var(--soft);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      transition: color .18s ease, text-shadow .18s ease, transform .18s ease;
+    }
+    .footer-note-icon:hover,
+    .footer-note-icon:focus-visible {
+      color: #f8fbff;
+      text-shadow: 0 0 12px rgba(255,255,255,0.34), 0 0 24px rgba(255,255,255,0.14);
+      transform: translateY(-1px);
+      outline: none;
     }
     .discussion-wrap {
       margin-top: 28px;
@@ -275,7 +296,32 @@
             <div class="archive-link">View landing page</div>
           </div>
         </a>
+        <a class="archive-card" href="https://catalog.codes.gallery" target="_blank" rel="noopener noreferrer">
+          <img class="archive-thumb" src="assets/catalog-release-thumb.png" alt="Catalog thumbnail" />
+          <div>
+            <h2 class="archive-title">Catalog</h2>
+            <p class="meta">March 28, 2026 · CST</p>
+            <p class="desc"><strong>Edition:</strong> March 2026 Issue 01</p>
+            <p class="desc"><strong>Medium:</strong> Digital PDF · Google Slides · ChatGPT / Codex · Midjourney</p>
+            <p class="desc"><strong>Object:</strong> The first catalog release extending <em>OS:AI Framework</em> into editorial publication through system language, photography, graphic intervention, and sequential layout.</p>
+            <div class="archive-link">Get the catalog</div>
+          </div>
+        </a>
+        <a class="archive-card" href="https://opensea.io/collection/harness-loop-by-xframes" target="_blank" rel="noopener noreferrer">
+          <img class="archive-thumb" src="assets/backaleyway.png" alt="Harness Loop NFT thumbnail" />
+          <div>
+            <h2 class="archive-title">Harness Loop NFT</h2>
+            <p class="meta">April 05, 2026 · CST</p>
+            <p class="desc"><strong>Medium:</strong> NFT Collection · OpenSea · Ethereum</p>
+            <p class="desc"><strong>Object:</strong> A minted extension of <em>Harness Loop</em>, connecting the motion study to the codesgallery OpenSea profile, collection, and object pages.</p>
+            <div class="archive-link">Explore collection</div>
+          </div>
+        </a>
       </div>
+    </section>
+
+    <section class="panel">
+      <p class="footer-note"><a class="footer-note-icon" href="https://en.wikipedia.org/wiki/Tesseract" target="_blank" rel="noopener noreferrer" aria-label="Read about tesseracts on Wikipedia"><i class="fa-brands fa-wikipedia-w"></i></a>Hypercube direction inspired by tesseract studies</p>
     </section>
 
     <section class="panel discussion-wrap">
