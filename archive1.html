@@ -53,6 +53,11 @@
       --cyan: #4FF6FF;
     }
     * { box-sizing: border-box; }
+    img {
+      -webkit-user-drag: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
     body {
       margin: 0;
       background: var(--bg);
@@ -347,5 +352,18 @@
       <a class="footer-contact" href="mailto:info@codes.gallery" aria-label="Email codes.gallery"><i class="fa-regular fa-envelope"></i></a>
     </footer>
   </div>
+  <script>
+    document.addEventListener('contextmenu', (event) => {
+      if (event.target.closest('img, .archive-thumb')) {
+        event.preventDefault();
+      }
+    });
+
+    document.addEventListener('dragstart', (event) => {
+      if (event.target.closest('img, .archive-thumb')) {
+        event.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>

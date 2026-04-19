@@ -56,6 +56,12 @@
 
     html { scroll-behavior: smooth; }
 
+    img {
+      -webkit-user-drag: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
     body {
       margin: 0;
       background: var(--bg);
@@ -858,6 +864,18 @@
   </section>
 
   <script>
+    document.addEventListener('contextmenu', (event) => {
+      if (event.target.closest('img, .archive-thumb, .wireframe')) {
+        event.preventDefault();
+      }
+    });
+
+    document.addEventListener('dragstart', (event) => {
+      if (event.target.closest('img, .archive-thumb, .wireframe')) {
+        event.preventDefault();
+      }
+    });
+
     const cursor = document.getElementById('cursor');
     const typed = document.getElementById('typed');
     const soundToggle = document.getElementById('soundToggle');
