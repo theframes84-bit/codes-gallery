@@ -201,6 +201,16 @@
       gap: 8px;
       flex-wrap: wrap;
     }
+    .card-note {
+      margin: 10px 0 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .card-note a {
+      color: var(--soft);
+      text-decoration: none;
+    }
     .footer-note-icon {
       color: var(--soft);
       text-decoration: none;
@@ -220,6 +230,11 @@
     }
     .discussion-wrap {
       margin-top: 28px;
+    }
+    #disqus_thread {
+      transform: scale(0.9);
+      transform-origin: top left;
+      width: 111.12%;
     }
     .footer-note a {
       color: var(--soft);
@@ -289,6 +304,7 @@
     </section>
 
     <section class="panel">
+      <p class="label">OS:AI Framework</p>
       <div class="archive-list">
         <a class="archive-card" href="index.html">
           <img class="archive-thumb" src="assets/tesseract_original_motion_wireframe.gif" alt="Harness Loop thumbnail" />
@@ -301,6 +317,7 @@
             <div class="archive-link">View landing page</div>
           </div>
         </a>
+        <p class="footer-note"><a href="https://en.wikipedia.org/wiki/Tesseract" target="_blank" rel="noopener noreferrer" aria-label="Read about tesseracts on Wikipedia"><span class="footer-note-icon" aria-hidden="true"><i class="fa-brands fa-wikipedia-w"></i></span>Hypercube direction inspired by tesseract studies</a></p>
         <a class="archive-card" href="https://catalog.codes.gallery" target="_blank" rel="noopener noreferrer">
           <img class="archive-thumb" src="assets/catalog-release-thumb.png" alt="Catalog thumbnail" />
           <div>
@@ -323,7 +340,9 @@
           </div>
         </a>
         <a class="archive-card" href="https://frames-map.theframes84.workers.dev/" target="_blank" rel="noopener noreferrer">
-          <img class="archive-thumb" src="assets/ecosystem-map-thumb.png" alt="Ecosystem Interactive Map thumbnail" />
+          <video class="archive-thumb" autoplay muted loop playsinline aria-label="Ecosystem Interactive Map timelapse thumbnail">
+            <source src="assets/FramesLab-thumb-square.webm" type="video/webm" />
+          </video>
           <div>
             <h2 class="archive-title">Ecosystem Interactive Map</h2>
             <p class="meta">April 23, 2026 · CST</p>
@@ -333,11 +352,18 @@
             <div class="archive-link">Open interactive map</div>
           </div>
         </a>
+        <p class="label">ORIGINAL WEBPAGE</p>
+        <a class="archive-card" href="oldcode.html" target="_blank" rel="noopener noreferrer">
+          <img class="archive-thumb" src="assets/code.png" alt="Space Invader Code thumbnail" />
+          <div>
+            <h2 class="archive-title">SPACE INVADER CODE</h2>
+            <p class="meta">March 24, 2021 · CST</p>
+            <p class="desc"><strong>Medium:</strong> HTML, CSS object</p>
+            <p class="desc"><strong>Object:</strong> Recreation of the original codes.gallery page with credits added.</p>
+            <div class="archive-link">Open to original page</div>
+          </div>
+        </a>
       </div>
-    </section>
-
-    <section class="panel">
-      <p class="footer-note"><a class="footer-note-icon" href="https://en.wikipedia.org/wiki/Tesseract" target="_blank" rel="noopener noreferrer" aria-label="Read about tesseracts on Wikipedia"><i class="fa-brands fa-wikipedia-w"></i></a>Hypercube direction inspired by tesseract studies</p>
     </section>
 
     <section class="panel discussion-wrap">
