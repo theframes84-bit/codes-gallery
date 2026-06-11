@@ -30,6 +30,7 @@
   <link rel="apple-touch-icon" href="favicon-32.png" />
   <link rel="alternate" type="application/rss+xml" title="codes.gallery RSS" href="https://codes.gallery/feed.xml" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW4MBB1BF9"></script>
   <script>
@@ -67,6 +68,7 @@
       background: var(--bg);
       color: var(--fg);
       overflow-x: hidden;
+      padding-bottom: 116px;
       font-family: 'Avenir Next','Nunito','Quicksand','Segoe UI',Arial,sans-serif;
     }
 
@@ -204,18 +206,145 @@
       letter-spacing: .02em;
     }
 
-    .hero-newsletter {
-      margin-top: 14px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+    .hero-code-panel {
+      width: min(720px, calc(100vw - 40px));
+      margin-top: 22px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background:
+        linear-gradient(180deg, rgba(79,246,255,0.08), rgba(79,246,255,0) 32%),
+        rgba(5,5,5,0.92);
+      box-shadow: 0 0 26px rgba(79,246,255,0.08), inset 0 0 0 1px rgba(255,255,255,0.02);
+      overflow: hidden;
+      text-align: left;
     }
 
-    .hero-newsletter input {
+    .hero-code-body {
+      padding: 18px 16px 16px;
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      align-items: center;
+      gap: 18px;
+      background:
+        radial-gradient(circle at top, rgba(79,246,255,0.06), transparent 52%),
+        rgba(5,5,5,0.94);
+    }
+
+    .hero-buy-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      padding: 6px 0;
+    }
+
+    .hero-code-copy {
+      display: grid;
+      gap: 8px;
+      text-align: left;
+    }
+
+    .hero-code-label {
+      margin: 0;
+      color: var(--cyan);
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family:'JetBrains Mono','SFMono-Regular','Cascadia Code','Fira Code','Consolas',monospace;
+    }
+
+    .hero-code-title {
+      margin: 0;
+      color: #f5f7fb;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.15;
+      font-weight: 600;
+    }
+
+    .hero-code-caption {
+      margin: 0;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.75;
+      font-family:'JetBrains Mono','SFMono-Regular','Cascadia Code','Fira Code','Consolas',monospace;
+    }
+
+    .hero-format-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .hero-format-list li {
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.75;
+      font-family:'JetBrains Mono','SFMono-Regular','Cascadia Code','Fira Code','Consolas',monospace;
+    }
+
+    .hero-format-list strong {
+      color: #f5f7fb;
+      font-weight: 600;
+    }
+
+    .signup-dock {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 11;
+      padding: 12px 18px 16px;
+      background: linear-gradient(to top, rgba(0,0,0,0.98), rgba(0,0,0,0.92), rgba(0,0,0,0.58) 80%, rgba(0,0,0,0));
+      backdrop-filter: blur(14px);
+    }
+
+    .signup-dock-shell {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(8,8,8,0.94);
+      box-shadow: 0 0 22px rgba(79,246,255,0.10), 0 0 40px rgba(0,0,0,0.34);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .signup-copy {
+      min-width: 0;
+    }
+
+    .signup-label {
+      margin: 0 0 4px;
+      color: var(--cyan);
+      font-size: 11px;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      font-family:'JetBrains Mono','SFMono-Regular','Cascadia Code','Fira Code','Consolas',monospace;
+    }
+
+    .signup-note {
+      margin: 0;
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .signup-form {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      align-items: center;
+      flex: 0 1 460px;
+    }
+
+    .signup-form input {
       height: 44px;
-      min-width: 260px;
+      min-width: 0;
+      width: 100%;
       padding: 0 14px;
       border: 1px solid var(--line);
       border-radius: 999px;
@@ -226,15 +355,15 @@
       transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
     }
 
-    .hero-newsletter input:focus,
-    .hero-newsletter input:focus-visible {
+    .signup-form input:focus,
+    .signup-form input:focus-visible {
       border-color: rgba(255,255,255,0.48);
       box-shadow: 0 0 18px rgba(255,255,255,0.22), 0 0 32px rgba(255,255,255,0.08);
       background: rgba(10,10,10,0.98);
       outline: none;
     }
 
-    .hero-newsletter button {
+    .signup-form button {
       width: 44px;
       height: 44px;
       display: inline-flex;
@@ -249,8 +378,8 @@
       transition: box-shadow .18s ease, border-color .18s ease, color .18s ease, background .18s ease;
     }
 
-    .hero-newsletter button:hover,
-    .hero-newsletter button:focus-visible {
+    .signup-form button:hover,
+    .signup-form button:focus-visible {
       color: #f8fbff;
       border-color: rgba(255,255,255,0.48);
       box-shadow: 0 0 18px rgba(255,255,255,0.32), 0 0 32px rgba(255,255,255,0.10);
@@ -357,16 +486,8 @@
       cursor: pointer;
     }
 
-    .hero-newsletter {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .hero-newsletter .share-trigger,
-    .hero-newsletter button[type="submit"] {
+    .signup-form .share-trigger,
+    .signup-form button[type="submit"] {
       flex: 0 0 auto;
     }
 
@@ -662,16 +783,15 @@
     }
 
     .site-footer {
-      position: sticky;
-      bottom: 0;
+      position: relative;
       z-index: 3;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
       margin-top: 28px;
-      padding: 12px 0 8px;
-      background: linear-gradient(to top, rgba(0,0,0,0.96), rgba(0,0,0,0.82), rgba(0,0,0,0));
+      padding: 12px 0 0;
+      background: transparent;
     }
 
     .site-footer-left {
@@ -729,21 +849,41 @@
       .section { width: min(760px, calc(100% - 24px)); }
       .hero { padding: 18px 18px 10px; }
       .desc { font-size: 14px; }
-      .newsletter-form input { min-width: min(100%, 280px); width: 100%; }
-      .hero-newsletter {
-        flex-wrap: nowrap;
-        gap: 6px;
-        width: min(100%, 360px);
+      .hero-code-panel {
+        width: min(100%, 420px);
+        margin-top: 18px;
       }
-      .hero-newsletter input {
-        min-width: 0;
-        width: auto;
+      .hero-code-body {
+        grid-template-columns: 1fr;
+        justify-items: stretch;
+      }
+      .hero-buy-wrap {
+        min-height: 0;
+      }
+      .newsletter-form input { min-width: min(100%, 280px); width: 100%; }
+      .signup-dock {
+        padding: 10px 10px 12px;
+      }
+      .signup-dock-shell {
+        padding: 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .signup-note {
+        font-size: 13px;
+      }
+      .signup-form {
         flex: 1 1 auto;
+        width: 100%;
+        gap: 6px;
+      }
+      .signup-form input {
         height: 40px;
         padding: 0 12px;
       }
-      .hero-newsletter .share-trigger,
-      .hero-newsletter button[type="submit"] {
+      .signup-form .share-trigger,
+      .signup-form button[type="submit"] {
         width: 40px;
         height: 40px;
         flex: 0 0 40px;
@@ -759,13 +899,25 @@
   <main class="hero">
     <img class="wireframe" src="assets/tesseract_original_motion_wireframe.gif" alt="Floating white wireframe motion" />
     <p class="typed-line">&gt; <span id="typed"></span><span id="cursor">_</span></p>
-    <form class="hero-newsletter" action="https://buttondown.com/api/emails/embed-subscribe/FRAMES" method="post">
-      <button id="shareTrigger" class="share-trigger" type="button" aria-label="Share codes.gallery" aria-haspopup="dialog" aria-controls="shareModal">
-        <i class="fa-solid fa-share-nodes"></i>
-      </button>
-      <input type="email" name="email" placeholder="Email address" required />
-      <button type="submit" aria-label="Subscribe"><i class="fa-regular fa-bell"></i></button>
-    </form>
+    <div class="hero-code-panel" aria-label="Code excerpt">
+      <div class="hero-code-body">
+        <div class="hero-buy-wrap">
+          <stripe-buy-button
+            buy-button-id="buy_btn_1TgvJFQpRrPABCKd0OdIjFGw"
+            publishable-key="pk_live_51TgseDQpRrPABCKdGXECt9JSrlFvkdEQ86i2LTGaMJVVkhTkhKc8kLi7snmeKuTaTEE1yPMXIgQLoLlIAfqSGSr800MiCDGvnO">
+          </stripe-buy-button>
+        </div>
+        <div class="hero-code-copy">
+          <p class="hero-code-label">Checkout</p>
+          <h2 class="hero-code-title">Digital PDF</h2>
+          <ul class="hero-format-list">
+            <li><strong>19-page catalog</strong> featuring 5 Midjourney generated images, Sections 01–05 on background and motion study, Plates 01–06 with workflow diagrams and text, plus 1 website code image.</li>
+            <li><strong>16:9 layout</strong></li>
+            <li><strong>Home printing:</strong> Landscape, Letter or A4, fit to printable area, borderless off.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </main>
 
   <div id="shareModal" class="share-modal" aria-hidden="true">
@@ -788,6 +940,22 @@
         <a href="https://www.blogger.com/blog-this.g?u=https%3A%2F%2Fcodes.gallery%2F&n=codes.gallery&t=Original%20ideas%2C%20rendered%20in%20code." target="_blank" rel="noopener noreferrer" aria-label="Share to Blogger"><i class="fa-brands fa-blogger-b"></i></a>
         <a href="/feed.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS feed"><i class="fa-solid fa-square-rss"></i></a>
       </div>
+    </div>
+  </div>
+
+  <div class="signup-dock">
+    <div class="signup-dock-shell">
+      <div class="signup-copy">
+        <p class="signup-label">Stay in the Loop</p>
+        <p class="signup-note">Get updates on new system objects, coded studies, and releases without leaving the homepage.</p>
+      </div>
+      <form class="signup-form" action="https://buttondown.com/api/emails/embed-subscribe/FRAMES" method="post">
+        <button id="shareTrigger" class="share-trigger" type="button" aria-label="Share codes.gallery" aria-haspopup="dialog" aria-controls="shareModal">
+          <i class="fa-solid fa-share-nodes"></i>
+        </button>
+        <input type="email" name="email" placeholder="Email address" required />
+        <button type="submit" aria-label="Subscribe"><i class="fa-regular fa-bell"></i></button>
+      </form>
     </div>
   </div>
 
